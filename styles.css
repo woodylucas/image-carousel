@@ -6,8 +6,8 @@ body {
   position: relative;
   max-width: 600px;
   max-height: 400px;
-  overflow: hidden;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .carousel-wrapper {
@@ -16,21 +16,25 @@ body {
 }
 
 .carousel-image {
-  flex-shrink: 0;
   max-width: 100%;
   min-width: 100%;
   object-fit: cover;
+  inset: 0;
+  flex-shrink: 0;
 }
 
 .carousel-button {
+  --size: 40px;
+  height: var(--size);
+  width: var(--size);
+
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   border: none;
-  padding: 20px;
-  border-radius: 90%;
+  border-radius: 50%;
   color: #fff;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.53);
   cursor: pointer;
 }
 
@@ -39,9 +43,44 @@ body {
 }
 
 .left {
-  left: 10px;
+  left: 16px;
 }
 
 .right {
-  right: 10px;
+  right: 16px;
+}
+
+.carousel-nav {
+  display: inline-flex;
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  gap: 8px;
+  padding: 8px;
+  border-radius: 12px;
+  background-color: rgba(0, 0, 0, 0.53);
+  padding: 8px;
+}
+
+.nav-button {
+  --size: 8px;
+  width: var(--size);
+  height: var(--size);
+
+  display: inline-block;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  background-color: #666;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.nav-button:hover {
+  background-color: #ccc;
+}
+.nav-button.active {
+  background-color: #fff;
 }
