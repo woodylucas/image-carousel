@@ -6,40 +6,35 @@ body {
   position: relative;
   max-width: 600px;
   max-height: 400px;
+  border: 20px solid black;
   margin: 0 auto;
   overflow: hidden;
 }
 
 .carousel-wrapper {
   display: flex;
-  transition: transform 0.5s linear;
+  transition: transform 0.3s ease-in-out;
 }
 
 .carousel-image {
   max-width: 100%;
-  min-width: 100%;
-  object-fit: cover;
-  inset: 0;
+  max-height: 100%;
   flex-shrink: 0;
+  object-fit: cover;
 }
 
 .carousel-button {
   --size: 40px;
-  height: var(--size);
-  width: var(--size);
-
+  min-height: var(--size);
+  min-width: var(--size);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.53);
+  color: #fff;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   border: none;
-  border-radius: 50%;
-  color: #fff;
-  background-color: rgba(0, 0, 0, 0.53);
   cursor: pointer;
-}
-
-.carousel-button:hover {
-  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .left {
@@ -50,30 +45,32 @@ body {
   right: 16px;
 }
 
+.carousel-button:hover {
+  background-color: rgba(0, 0, 0, 0.78);
+}
+
 .carousel-nav {
   display: inline-flex;
+  gap: 8px;
   position: absolute;
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%);
-  gap: 8px;
   padding: 8px;
   border-radius: 12px;
   background-color: rgba(0, 0, 0, 0.53);
-  padding: 8px;
 }
 
 .nav-button {
-  --size: 8px;
-  width: var(--size);
-  height: var(--size);
-
   display: inline-block;
+  --size: 8px;
+  min-height: var(--size);
+  min-width: var(--size);
   flex-shrink: 0;
   padding: 0;
   border: none;
-  background-color: #666;
   border-radius: 50%;
+  background-color: #666;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
 }
@@ -81,6 +78,7 @@ body {
 .nav-button:hover {
   background-color: #ccc;
 }
+
 .nav-button.active {
   background-color: #fff;
 }
